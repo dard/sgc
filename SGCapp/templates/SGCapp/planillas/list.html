@@ -1,0 +1,29 @@
+{% extends 'SGCapp/list.html'%}
+{% load static %}
+
+{% block head_list %}
+    <script type="text/javascript" src="{% static 'planilla/list.js' %}"></script>
+{% endblock %}
+
+{% block columns %}
+<tr>
+    <th style="width: 5%;">Nro</th>
+    <th style="width: 10%;">Caja</th>
+    <th style="width: 10%;">Cobrador</th>
+    <th style="width: 20%;">Fecha Emision</th>
+    <th style="width: 20%;">Fecha Cierre</th>
+    <th style="width: 20%;">Monto Total</th>
+    <th style="width: 10%;">Estado</th>
+    <th style="width: 5%;">Opciones</th>
+</tr>
+{% endblock %}
+
+{% block rows %}
+
+{% endblock %}
+
+{% block javascript %}
+<script type="application/javascript">
+
+</script>
+{% endblock %}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% extends 'SGCapp/list.html'%}
+{% load static %}
+
+<!-- {% block head_list %}
+    <script type="text/javascript" src="{% static 'cobrador/list.js' %}"></script>
+{% endblock %} -->
+
+{% block columns %}
+    <tr>
+        <th style="width: 4%;">Nro</th>
+        <th style="width: 14%;">Nombre</th>
+        <th style="width: 14%;">Apellido</th>
+        <th style="width: 9%;">Dni</th>
+        <th style="width: 9%;">Teléfono</th>
+        <th style="width: 9%;">Email</th>
+        <th style="width: 9%;">direccion</th>
+        <th style="width: 10%;">Opciones</th>
+    </tr>
+{% endblock %}
+{% block rows %}
+<!-- la siguiente iteracion es para utilizar si no se utiliza ajax para listar el objeto -->
+    <!-- {% for cob in object_list %}
+        <tr>
+            <td>{{ cob.id }}</td>
+            <td>{{ cob.nombre }}</td>
+            <td>{{ cob.apellido }}</td>
+            <td>{{ cob.dni }}</td>
+            <td>{{ cob.telefono }}</td>
+            <td>{{ cob.email }}</td>
+            <td>{{ cob.direccion }}</td>
+            <td>{{ cob.creado }}</td>
+            <td>{{ cob.actualizado }}</td>
+            <td>
+                <a href="{% url 'SGCapp:CobradorUpdateView' cob.id %}" class="btn btn-warning btn-xs btn-flat">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="{% url 'SGCapp:CobradorDeleteView' cob.id %}" class="btn btn-danger btn-xs btn-flat">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+
+    -->
+
+{% endblock %}
+
+{% block javascript %}
+
+<script type="application/javascript">
+
+</script>
+{% endblock %}

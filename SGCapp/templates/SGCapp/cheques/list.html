@@ -1,0 +1,27 @@
+{% extends 'SGCapp/list.html'%}
+{% load static %}
+
+{% block head_list %}
+    <script type="text/javascript" src="{% static 'cheques/list.js' %}"></script>
+{% endblock %}
+
+{% block columns %}
+<tr>
+    <th style="width: 10%;">Nro</th>
+    <th style="width: 25%;">Banco</th>
+    <th style="width: 25%;">Fecha</th>
+    <th style="width: 15%;">Monto</th>
+    <th style="width: 25%;">Imagen</th>
+    <th style="width: 10%;">Opciones</th>
+</tr>
+{% endblock %}
+
+{% block rows %}
+
+{% endblock %}
+
+{% block javascript %}
+<script type="application/javascript">
+
+</script>
+{% endblock %}

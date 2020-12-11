@@ -1,0 +1,51 @@
+{% extends 'SGCapp/home.html' %}
+<!-- {% load static %} -->
+    {% block body %}
+        <body class="hold-transition layout-top-nav">
+        <div class="wrapper">
+            <!-- Header -->
+            {% include 'SGCapp/header.html' %}
+            <!-- Content -->
+            <div class="content-wrapper">
+                <div class="content-header">
+                    <div class="container">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1 class="m-0 text-dark"> Bienvenido <small>a SGC</small></h1>
+                            </div>
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item"><a href="{% url 'index' %}">Inicio</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ list_url }}">{{ entity }}</a></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="container">
+                        {% block content %}
+                        <h3> Con SGCapp prodra realizar el control de los cobros </h3>
+                        <li><a href="{% url 'SGCapp:ClienteListView' %}"><i class="bx bx-file-blank"></i> <span>Clientes</span></a></li>
+                        <li><a href="{% url 'SGCapp:CobradorListView' %}"><i class="bx bx-book-content"></i>Cobradores</a></li>
+                        <li><a href="{% url 'SGCapp:ComprobanteListView' %}"><i class="bx bx-server"></i> Comprobantes</a></li>
+                        <li><a href="{% url 'SGCapp:BancoListView' %}"><i class="bx bx-server"></i> Bancos</a></li>
+                        <li><a href="{% url 'SGCapp:ChequeListView' %}"><i class="bx bx-server"></i> Cheques</a></li>
+                        <li><a href="{% url 'SGCapp:CajaListView' %}"><i class="bx bx-file-blank"></i> <span>Cajas</span></a></li>
+                        <li><a href="{% url 'SGCapp:PlanillaListView' %}"><i class="bx bx-server"></i> Planillas</a></li>
+                        <li><a href="{% url 'SGCapp:ReciboFacturaListView' %}"><i class="bx bx-server"></i> Recibos</a></li>
+                        <!-- <li><a href="{% url 'SGCapp:AnticipoListView' %}"><i class="bx bx-server"></i> Anticipos</a></li> -->
+                        <!-- <li><a href="{% url 'SGCapp:ComprobanteGeneradoListView' %}"><i class="bx bx-server"></i> Comprobantes Generados</a></li> -->
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+            {% include 'SGCapp/footer.html' %}
+        </div>
+        <!-- bloque  javascript -->
+        {% block javascript %}
+
+        {% endblock %}
+        </body>
+    {% endblock %}

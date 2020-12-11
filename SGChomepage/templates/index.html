@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Sistema de gestion de Cobranzas - Index</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}assets/" rel="stylesheet">
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio - v1.2.0
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <!-- <img src="{% static 'img/profile-img.jpg' %}" alt="" class="img-fluid rounded-circle"> -->
+        <h1 class="text-light"><a href="{% url 'index' %}">SGCapp</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <ul>
+          <li class="active"><a href="{% url 'index' %}"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="{% url 'LoginFormView' %}"><i class="bx bx-log-in-circle"></i> <span>Login</span></a></li>
+          <li><a href="{% url 'logout' %}"><i class="bx bx-log-out-circle"></i>Logut</a></li>
+          <li><a href="{% url 'SGCapp:ClienteListView' %}"><i class="bx bxs-user-rectangle"></i> <span>Clientes</span></a></li>
+          <li><a href="{% url 'SGCapp:CobradorListView' %}"><i class="bx bxs-user-plus"></i>Cobradores</a></li>
+          <li><a href="{% url 'SGCapp:ComprobanteListView' %}"><i class="bx bxs-detail"></i> Comprobantes</a></li>
+          <li><a href="{% url 'SGCapp:BancoListView' %}"><i class="bx bxs-bank"></i> Bancos</a></li>
+          <li><a href="{% url 'SGCapp:ChequeListView' %}"><i class="bx bx-money"></i> Cheques</a></li>
+          <li><a href="{% url 'SGCapp:CajaListView' %}"><i class="bx bxs-badge-dollar"></i> <span>Cajas</span></a></li>
+          <li><a href="{% url 'SGCapp:PlanillaListView' %}"><i class="bx bx-clipboard"></i> Planillas</a></li>
+          <li><a href="{% url 'SGCapp:ReciboFacturaListView' %}"><i class="bx bx-receipt"></i> Recibos</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+      <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>SGCapp</h1>
+      <p>Te posibilita <span class="typed" data-typed-items="Administrar, Controlar, Cobrar"></span> en linea</p>
+    </div>
+  </section><!-- End Hero -->
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'SGCapp:dashboard' %}"></a>
+            Usuario autentificado <i class="fas fa-users-cog"></i> {{ request.user.username }}
+        {% else %}
+            <a href="{ url 'LoginFormView' }"></a>
+
+                <i class=" bx bx-door-open"></i> Login
+        {% endif %}
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'vendor/counterup/counterup.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'vendor/typed.js/typed.min.js' %}"></script>
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
