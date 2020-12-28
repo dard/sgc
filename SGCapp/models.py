@@ -237,27 +237,30 @@ class Recibo(models.Model):
     def toJSON(self):
         item = model_to_dict(self, exclude=['comprobantes', 'cheque'])
         item['recibo_cliente'] = self.recibo_cliente.toJSON()
+        if self.comprobantes:
+            item['comprobantes'] = self.comprobantes.toJSON()
+        if self.cheque:
+            item['cheque'] = self.cheque.toJSON()
         item['subtotalComp'] = format(self.subtotalComp, '.2f')
         item['subtotalCheq'] = format(self.subtotalCheq, '.2f')
         if item['estado'] == 'C':
             item['fecha'] = self.fecha.strftime('%y-%m-%d')
         else:
             item['fecha'] = None
+
         return item
 
     def __str__(self):
-        return '{} {} {} {} {} {} {} {} {} {} {} {}'.format(self.recibo_caja,
-                                                            self.fecha,
-                                                            self.recibo_cliente,
-                                                            self.efectivo,
-                                                            self.comprobantes,
-                                                            self.subtotalComp,
-                                                            self.cheque,
-                                                            self.subtotalCheq,
-                                                            self.total,
-                                                            self.estado,
-                                                            self.comprobantes,
-                                                            self.cheque)
+        return '{} {} {} {} {} {} {} {} {} {}'.format(self.recibo_caja,
+                                                      self.fecha,
+                                                      self.recibo_cliente,
+                                                      self.efectivo,
+                                                      self.comprobantes,
+                                                      self.subtotalComp,
+                                                      self.cheque,
+                                                      self.subtotalCheq,
+                                                      self.total,
+                                                      self.estado)
 
     class Meta:
         verbose_name = 'Recibo'

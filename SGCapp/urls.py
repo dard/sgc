@@ -44,6 +44,8 @@ urlpatterns = [
          name='ReciboFacturaCreateView'),
     path('deleteReciboFactura/<int:pk>/',
          views.ReciboFacturaDeleteView.as_view(), name='ReciboFacturaDeleteView'),
+    path('ReciboFactutaPdfView/<int:pk>/',
+         views.ReciboFactutaPdfView.as_view(), name='ReciboFactutaPdfView'),
 
     # urls Caja
     path('listCaja/', views.CajaListView.as_view(),
@@ -54,6 +56,8 @@ urlpatterns = [
          name='CajaUpdateView'),
     path('deleteCaja/<int:pk>/',
          views.CajaDeleteView.as_view(), name='CajaDeleteView'),
+    path('deleteCaja/<int:pk>/',
+         views.CajaDeleteView.as_view(), name='CajaDeleteView'),
 
     # urls Planilla
     path('listPlanilla/', views.PlanillaListView.as_view(),
@@ -62,7 +66,6 @@ urlpatterns = [
          name='PlanillaCreateView'),
     path('editPlanilla/<int:pk>/', views.PlanillaUpdateView.as_view(),
          name='PlanillaUpdateView'),
-    path('deletePlanilla/<int:pk>/',
-         views.PlanillaDeleteView.as_view(), name='PlanillaDeleteView'),
+
 
 ]
